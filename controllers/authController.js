@@ -95,7 +95,7 @@ export const loginController = async (req, res) => {
         name: user.name,
         email: user.email,
         phone: user.phone,
-        adddress: user.address,
+        address: user.address,
       },
       token,
     });
@@ -108,3 +108,10 @@ export const loginController = async (req, res) => {
     });
   }
 };
+
+//testController 
+
+export const testController = (req,res)=>{
+  res.send("DONE**234567890-o")
+  console.log("Pro rout")
+}
