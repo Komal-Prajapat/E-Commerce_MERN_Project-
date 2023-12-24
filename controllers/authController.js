@@ -57,7 +57,6 @@ export const registerController = async (req, res) => {
 };
 
 //POST LOGIN
-
 export const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -68,7 +67,7 @@ export const loginController = async (req, res) => {
         message: "Invalid email or password",
       });
     }
- //check user
+    //check user
     const user = await userModel.findOne({ email });
     if (!user) {
       return res.status(404).send({
@@ -83,7 +82,7 @@ export const loginController = async (req, res) => {
         message: "Invalid Password",
       });
     }
-//token
+    //token
     const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
@@ -95,7 +94,7 @@ export const loginController = async (req, res) => {
         name: user.name,
         email: user.email,
         phone: user.phone,
-        address: user.address,
+        adddress: user.address,
       },
       token,
     });
@@ -109,9 +108,12 @@ export const loginController = async (req, res) => {
   }
 };
 
-//testController 
-
-export const testController = (req,res)=>{
-  res.send("DONE**234567890-o")
-  console.log("Pro rout")
-}
+//test controller
+export const testController = (req, res) => {
+  try {
+    res.send("Protected Routes");
+  } catch (error) {
+    console.log(error);
+    res.send({ error });
+  }
+};

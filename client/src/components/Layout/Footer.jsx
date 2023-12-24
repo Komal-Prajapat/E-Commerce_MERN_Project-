@@ -1,17 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+
 const Footer = () => {
   return (
-    <div className="footer" >
-      <Footer classNam="footer">
-       <h1 className="text-center">All Right Reserved &copy; Techinfoyt</h1>
-      <p className="text-center mt-3">
-        <Link to="/about">About</Link>|<Link to="/contact">Contact</Link>|
-        <Link to="/policy">Privacy Policy</Link>
-      </p>
-      </Footer>
-    </div>
-  );
-};
+    <>
+        <div className="container-fluid footer">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, unde labore, beatae harum aliquam quae praesentium voluptatibus voluptatem reprehenderit velit dolorum doloribus sapiente.
+        </div> 
+    </>
+  )
+}
 
-export default Footer;
+export default Footer
